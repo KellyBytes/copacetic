@@ -1,18 +1,43 @@
-export default function Countdown() {
+import { useState, useEffect } from 'react';
+import { convertMilliseconds, countdownIn24Hours } from '../utils';
+
+export default function Countdown(props) {
+  const { handleChangePage, daysWords, datetime, day } = props;
+  const targetMillis = datetime || Date.UTC(1970, 10, 7, 12, 0, 0);
+  const [remainingMs, setRemainingMs] = useState(
+    countdownIn24Hours(targetMillis)
+  );
+  const timer = convertMilliseconds(remainingMs);
+  // console.log(timer);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRemainingMs(countdownIn24Hours(targetMillis));
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [targetMillis]);
+
   return (
     <div className="card countdown-card">
-      <h1 className="item-header">Day {1}</h1>
+      <h1 className="item-header">Day {day}</h1>
       <div className="today-container">
         <div>
           <p>Time remaining</p>
-          <h3>13H 45M 22S</h3>
+          <h3>
+            {datetime
+              ? `${Math.abs(timer.hours)}H ${Math.abs(
+                  timer.minutes
+                )}M ${Math.abs(timer.seconds)}S`
+              : '23H 59M 59S'}
+          </h3>
         </div>
         <div>
           <p>Words for today</p>
-          <h3>16</h3>
+          <h3>{daysWords.length}</h3>
         </div>
       </div>
-      <button className="start-task">
+      <button className="start-task" onClick={() => handleChangePage(2)}>
         <h6>Start</h6>
       </button>
     </div>

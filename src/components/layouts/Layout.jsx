@@ -1,5 +1,5 @@
 export default function Layout(props) {
-  console.log(props);
+  // console.log(props);
   const { children } = props;
 
   return (
