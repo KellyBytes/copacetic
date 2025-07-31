@@ -59,6 +59,10 @@ section {
   padding: 1rem 2rem;
 }
 
+svg path {
+  fill: var(--background-secondary);
+}
+
 /* DASHBOARD */
 
 .stats-card {
@@ -243,7 +247,9 @@ footer a {
   gap: 0.5rem;
   padding: 0.3rem;
   padding-right: 0.5rem;
-  background: var(--background-muted);
+  /* background: var(--background-muted); */
+  background: var(--color-link-transparent);
+  color: var(--color-primary);
   border-radius: 4rem;
   border: 1px solid transparent;
   transition-duration: 0.2s;
@@ -251,7 +257,7 @@ footer a {
 }
 
 footer a:hover {
-  border-color: var(--color-link);
+  border-color: var(--color-tertiary);
 }
 
 footer a img {
