@@ -1,17 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ProgressBar from '../ProgressBar';
 import { isEncountered, shuffle } from '../../utils';
 import DEFINITIONS from '../../utils/VOCAB.json';
 
 export default function Challenge(props) {
-  const {
-    day,
-    daysWords,
-    handleChangePage,
-    handleIncrementAttempts,
-    handleCompleteDay,
-    PLAN,
-  } = props;
+  const { day, daysWords, handleChangePage, handleIncrementAttempts, handleCompleteDay, PLAN } =
+    props;
   const [wordIndex, setWordIndex] = useState(0);
   const [inputVal, setInputVal] = useState('');
   const [showDefinition, setShowDefinition] = useState(false);
@@ -23,26 +17,29 @@ export default function Challenge(props) {
   ]);
 
   const word = listToLearn[wordIndex];
-  const isNewWord =
-    showDefinition ||
-    (!isEncountered(day, word) && wordIndex < daysWords.length);
+  const isNewWord = showDefinition || (!isEncountered(day, word) && wordIndex < daysWords.length);
   const definition = DEFINITIONS[word];
   // const word = 'conpacetic';
   // const definition = 'In excellent order';
 
-  console.log(daysWords);
-  console.log(listToLearn);
-  console.log(definition);
+  // console.log(daysWords);
+  // console.log(listToLearn);
+  // console.log(definition);
 
   const giveUp = () => {
     setListToLearn([...listToLearn, word]);
     setShowDefinition(true);
   };
 
+  useEffect(() => {
+    console.log(definition);
+  }, [definition]);
+
   return (
     <section id="challenge">
-      <h1>{word}</h1>
-      {isNewWord && <p>{definition}</p>}
+      {/* <h1>{word}</h1> */}
+      <h3>{word}</h3>
+      {isNewWord && <em>{definition}</em>}
       <div className="helper">
         <div>
           {/* CONTAINS ALL THE ERROR CORRECTION VISUAL BARS */}
@@ -92,10 +89,7 @@ export default function Challenge(props) {
       </div>
 
       <div className="challenge-btns">
-        <button
-          className="card-button-secondary"
-          onClick={() => handleChangePage(1)}
-        >
+        <button className="card-button-secondary" onClick={() => handleChangePage(1)}>
           <h6>Quit</h6>
         </button>
         <button className="card-button-primary" onClick={giveUp}>
