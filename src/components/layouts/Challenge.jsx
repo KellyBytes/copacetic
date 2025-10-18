@@ -1,7 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import ProgressBar from '../ProgressBar';
 import { isEncountered, shuffle } from '../../utils';
 import DEFINITIONS from '../../utils/VOCAB.json';
+import { useWindowSize } from 'react-use';
+import Confetti from 'react-confetti';
+// import confetti from 'canvas-confetti';
 
 export default function Challenge(props) {
   const {
@@ -12,8 +15,12 @@ export default function Challenge(props) {
     handleCompleteDay,
     PLAN,
   } = props;
+  const { width, height } = useWindowSize();
   const [wordIndex, setWordIndex] = useState(0);
   const [inputVal, setInputVal] = useState('');
+  const [isCorrect, setIsCorrect] = useState(false);
+  // const canvasRef = useRef(null);
+  // const confettiInstance = useRef(null);
   const [showDefinition, setShowDefinition] = useState(false);
   const [listToLearn, setListToLearn] = useState([
     ...daysWords,
@@ -39,9 +46,42 @@ export default function Challenge(props) {
     setShowDefinition(true);
   };
 
+  // const shootConfetti = () => {
+  //   const duration = 1 * 1000;
+  //   const animationEnd = Date.now() + duration;
+
+  //   const frame = () => {
+  //     const timeLeft = animationEnd - Date.now();
+  //     if (timeLeft <= 0) return;
+
+  //     const particleCount = 50 * (timeLeft / duration);
+
+  //     confettiInstance.current({
+  //       particleCount,
+  //       spread: 360,
+  //       startVelocity: 35,
+  //       ticks: 60,
+  //       origin: { x: 0.5, y: 0.5 },
+  //     });
+
+  //     requestAnimationFrame(frame);
+  //   };
+
+  //   frame();
+  // };
+
   useEffect(() => {
     console.log(definition);
   }, [definition]);
+
+  // useEffect(() => {
+  //   if (canvasRef.current) {
+  //     confettiInstance.current = confetti.create(canvasRef.current, {
+  //       resize: true,
+  //       useWorker: true,
+  //     });
+  //   }
+  // }, []);
 
   return (
     <section id="challenge">
@@ -71,29 +111,52 @@ export default function Challenge(props) {
             // if the user has entered the correct number of characters, we need to do the followings:
             // 1. if the entry is correct, we need to increment attempts and move them on to the next word
             // 2. if the entry is incorrect, we need to increment attempts, and also if they
+            const val = e.target.value;
+            setInputVal(val);
+
             if (
-              e.target.value.length == definition.length &&
-              e.target.value.length > inputVal.length
+              val.length == definition.length &&
+              val.length > inputVal.length
             ) {
               //compare words
               handleIncrementAttempts();
 
-              if (e.target.value.toLowerCase() == definition.toLowerCase()) {
+              if (val.toLowerCase() == definition.toLowerCase()) {
                 // then the user has the correct outcome
-                if (wordIndex >= listToLearn.length - 1) {
-                  handleCompleteDay();
-                  return;
-                }
-                setWordIndex(wordIndex + 1);
-                setShowDefinition(false);
-                setInputVal('');
-                return;
-                // check if finished all the words, then end the day, otherwise go to next word
+                setIsCorrect(true);
+                // shootConfetti();
+
+                setTimeout(() => {
+                  setIsCorrect(false);
+                  setInputVal('');
+                  setShowDefinition(false);
+
+                  if (wordIndex >= listToLearn.length - 1) {
+                    handleCompleteDay();
+                  } else {
+                    setWordIndex(wordIndex + 1);
+                  }
+                }, 2000);
               }
             }
-            setInputVal(e.target.value);
           }}
         />
+
+        {isCorrect && (
+          <>
+            <div className="correct-message correct-fade">🎉 Correct!</div>
+            <Confetti
+              width={width}
+              height={height}
+              numberOfPieces={800}
+              gravity={0.3}
+              wind={0.01}
+              recycle={false}
+            />
+          </>
+        )}
+
+        {/* <canvas ref={canvasRef} className="canvas"></canvas> */}
       </div>
 
       <div className="challenge-btns">

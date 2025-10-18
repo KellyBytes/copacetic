@@ -212,6 +212,7 @@ svg path {
   flex-direction: column;
   gap: 0.75rem;
   width: 100%;
+  /* position: relative; */
 }
 
 .helper input {
@@ -239,6 +240,49 @@ svg path {
 
 .incorrect {
   background: oklch(0.656 0.241 354.308) !important;
+}
+
+/* react-confetti*/
+.correct-message {
+  color: #4ade80;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.animate-pop {
+  animation: pop 0.4s ease;
+}
+
+/* canvas-confetti */
+/* .correct-message {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  line-height: 2.5rem;
+  color: #34d399;
+  font-size: 2.25rem;
+  font-weight: 700;
+} */
+
+.correct-fade {
+  animation: fadeInOut 1.8s ease-in-out forwards;
+}
+
+.canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
 }
 
 /* FOOTER */
@@ -285,5 +329,37 @@ footer a img {
 @media (max-width: 640px) {
   #challenge h3 {
     text-align: center;
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  1000% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
   }
 }
