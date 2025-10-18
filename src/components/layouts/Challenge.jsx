@@ -4,8 +4,14 @@ import { isEncountered, shuffle } from '../../utils';
 import DEFINITIONS from '../../utils/VOCAB.json';
 
 export default function Challenge(props) {
-  const { day, daysWords, handleChangePage, handleIncrementAttempts, handleCompleteDay, PLAN } =
-    props;
+  const {
+    day,
+    daysWords,
+    handleChangePage,
+    handleIncrementAttempts,
+    handleCompleteDay,
+    PLAN,
+  } = props;
   const [wordIndex, setWordIndex] = useState(0);
   const [inputVal, setInputVal] = useState('');
   const [showDefinition, setShowDefinition] = useState(false);
@@ -17,7 +23,9 @@ export default function Challenge(props) {
   ]);
 
   const word = listToLearn[wordIndex];
-  const isNewWord = showDefinition || (!isEncountered(day, word) && wordIndex < daysWords.length);
+  const isNewWord =
+    showDefinition ||
+    (!isEncountered(day, word) && wordIndex < daysWords.length);
   const definition = DEFINITIONS[word];
   // const word = 'conpacetic';
   // const definition = 'In excellent order';
@@ -57,7 +65,7 @@ export default function Challenge(props) {
         </div>
         <input
           type="text"
-          placeholder="Enter the definition..."
+          placeholder="Enter the word..."
           value={inputVal}
           onChange={(e) => {
             // if the user has entered the correct number of characters, we need to do the followings:
@@ -89,7 +97,10 @@ export default function Challenge(props) {
       </div>
 
       <div className="challenge-btns">
-        <button className="card-button-secondary" onClick={() => handleChangePage(1)}>
+        <button
+          className="card-button-secondary"
+          onClick={() => handleChangePage(1)}
+        >
           <h6>Quit</h6>
         </button>
         <button className="card-button-primary" onClick={giveUp}>

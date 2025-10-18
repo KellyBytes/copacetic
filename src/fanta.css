@@ -22,27 +22,32 @@
 @import url(https://fonts.googleapis.com/css?family=Press+Start+2P:regular&display=swap);
 
 :root {
-  --bg-light: hsl(0 0% 100%);
+  /* --bg-light: hsl(0 0% 100%);
   --bg: hsl(0 0% 95%);
-  --bg-dark: hsl(0 0% 90%);
+  --bg-dark: hsl(0 0% 90%); */
+  --bg-light: hsl(0 0% 95%); /* #f2f2f2 */
+  --bg: hsl(0 0% 90%); /* #e6e6e6 */
+  --bg-dark: hsl(0 0% 85%); /* #d9d9d9*/
 
   --text: hsl(0 0% 5%);
   --text-muted: hsl(0 0% 30%);
-  --text-link: hsl(220 100% 60%);
-  --text-link-transparent: hsl(220 100% 60% 0.4);
+  --text-link: hsla(225 100% 70%);
+  --text-link-muted: hsl(225 100% 70% / 0.2);
 
-  --primary: #d8a021;
-  --secondary: #33473b;
+  --accent: hsl(220 100% 60%);
+
+  --gray: hsl(240 15% 70%);
+  --gray-light: hsl(240 15% 80%);
 
   --gradient-start: #9580ff;
   --gradient-end: #80ffea;
 
-  /* --border: #29325b;
-  --border-muted: #1d488d;
-  --border-highlight: #4649af; */
-  --border: hsl(0 0% 30%);
+  /* --border: hsl(0 0% 30%);
   --border-muted: hsl(0 0% 40%);
-  --border-highlight: hsl(0 0% 100%);
+  --border-highlight: hsl(0 0% 100%); */
+  --border: hsl(229 40% 30%);
+  --border-muted: hsl(229 40% 40%);
+  --border-highlight: hsl(229 40% 80%);
 
   --border-radius-small: 0.5rem;
   --border-radius-large: 0.75rem;
@@ -51,12 +56,9 @@
   --shadow: 0px 2px 2px hsla(0, 0%, 0%, 0.17), 0px 4px 4px hsla(0, 0%, 0%, 0.15);
   --shadow-large: -1px -1px 4px #0022ffbf, 2px 2px 10px #0022ffbf,
     0 0 20px #0022ffbf;
-  --shadow-text: "";
 
   --padding-small: 1rem;
   --padding-large: 2rem;
-
-  --text-selection: "";
 }
 
 * {
@@ -92,7 +94,7 @@ body {
 
 .special-shadow {
   text-shadow: var(--shadow);
-  color: var(--text-link);
+  color: var(--accent);
 }
 
 /* Typography */
@@ -132,14 +134,12 @@ h3,
 h4 {
   font-size: 1rem;
   line-height: 1.5rem;
-  color: var(--text-muted);
 }
 
 h5,
 h6 {
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: var(--text-muted);
 }
 
 p {
@@ -408,7 +408,7 @@ input[type="radio"] {
 
 button {
   color: var(--text);
-  background-color: var(--bg);
+  background-color: var(--bg-light);
   width: fit-content;
   font-family: inherit;
   font-size: inherit;
@@ -586,14 +586,14 @@ details[open] summary {
 
 .card,
 .button-card {
-  background-color: var(--bg-dark);
+  background-color: var(--bg);
   color: var(--text);
   padding: 1rem;
   border-radius: 0.5rem;
 }
 
 .card {
-  border: 1px solid var(--text-link-transparent);
+  border: 1px solid var(--gray);
 }
 
 .button-card {
@@ -617,13 +617,13 @@ details[open] summary {
 }
 
 .card-button-primary {
-  color: var(--bg-light);
-  background: var(--text-link);
+  color: var(--text);
+  background: var(--gray);
 }
 
 .card-button-secondary {
-  color: var(--text-link);
-  background: var(--text-link-transparent);
+  color: var(--text);
+  background: var(--gray-light);
 }
 
 .card-button-primary:hover,

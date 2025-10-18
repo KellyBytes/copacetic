@@ -104,7 +104,7 @@ svg path {
 
 .level-bar {
   flex: 1;
-  background: var(--text-link-transparent);
+  background: var(--text-link-muted);
 }
 
 .xp {
@@ -178,9 +178,15 @@ svg path {
   padding: 1rem;
 }
 
+#challenge h3 {
+  font-size: clamp(1.125rem, 0.625rem + 2.581vw, 1.625rem);
+  /* text-align: center; */
+}
+
 /* When displaying word, not definition */
 #challenge em {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  color: var(--text-muted);
 }
 
 .challenge-btns {
@@ -228,7 +234,7 @@ svg path {
 }
 
 .correct {
-  background: var(--text-link) !important;
+  background: var(--gray) !important;
 }
 
 .incorrect {
@@ -242,7 +248,6 @@ footer {
   flex-direction: column;
   gap: 0.3rem;
   align-items: center;
-  padding: 3rem 0;
   color: var(--text-muted);
 }
 
@@ -277,5 +282,8 @@ footer a img {
 /* MEDIA QUERIES */
 /* Mobile first */
 
-@media (min-width: 640px) {
+@media (max-width: 640px) {
+  #challenge h3 {
+    text-align: center;
+  }
 }
