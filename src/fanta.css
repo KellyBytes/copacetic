@@ -11,137 +11,65 @@
 * 5. Tables
 * 6. Forms
 * 7. Interactive elements
-*
 */
 
-/* @import url('https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&family=Grenze:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
-@import url("https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&family=Press+Start+2P&family=BioRhyme:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Cardo:ital,wght@0,400;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+@import url(https://fonts.googleapis.com/css?family=BioRhyme:200,300,regular,500,600,700,800&display=swap);
 
-/* :root {
-    --background-primary: white;
-    --background-secondary: '';
-    --background-tertiary: #dbeafe;
-    --background-accent: '';
-    --background-compliment: '';
-    --background-gradient: '';
-    --background-muted: #f8fafc;
+@import url(https://fonts.googleapis.com/css?family=Eczar:regular,500,600,700,800&display=swap);
 
-    --color-primary: #030615;
-    --color-secondary: '';
-    --color-tertiary: '';
-    --color-accent: '';
-    --color-compliment: '';
-    --color-gradient: '';
-    --color-muted: ;
-    --color-link: #2563eb;
-    --color-link-transparent: rgba(37, 99, 235, 0.1);
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic&display=swap);
 
-    --color-success: '';
-    --color-warning: '';
-    --color-error: '';
-    --color-info: '';
-    --color-highlight: #fef9c3;
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P:regular&display=swap);
 
-    --gradient-start: #9580ff;
-    --gradient-end: #80ffea;
-
-    --border-primary: #f1f5f9;
-    --border-secondary: #bed1e7;
-    --border-highlight: #64748b;
-    --border-tertiary: '';
-
-    --shadow-dark: '';
-    --shadow-light: '';
-    --shadow-text: '';
-
-    --padding-small: 1rem;
-    --padding-large: 2rem;
-
-    --border-radius-small: 0.5rem;
-    --border-radius-large: 0.75rem;
-    --highlight-border-radius: 0.5rem;
-
-    --text-selection: '';
-} */
-
-/* @media (prefers-color-scheme: dark) { */
 :root {
-  /* --background-primary: #030615; */
-  /* --background-secondary: rgb(23 37 84); */
-  /* --background-tertiary: #121424; */
-  /* --background-primary: #EFF1ED;
-  --background-secondary: #373d2033;
-  --background-tertiary: #717744; */
-  --background-primary: #ffffff;
-  --background-secondary: #bfc0c0;
-  --background-tertiary: #4f5d75;
-  --background-accent: "";
-  --background-compliment: "";
-  --background-gradient: "";
-  /* --background-muted: #1a1e32; */
-  --background-muted: #bfc0c03b;
+  --bg-light: hsl(0 0% 100%);
+  --bg: hsl(0 0% 95%);
+  --bg-dark: hsl(0 0% 90%);
 
-  /* --color-primary: rgb(219 234 254); */
-  --color-primary: #2d3142;
-  --color-secondary: "";
-  --color-tertiary: "";
-  --color-accent: "";
-  --color-compliment: "";
-  --color-gradient: "";
-  --color-muted: ;
-  /* --color-link: #60a5fa;
-  --color-link-transparent: rgba(37, 99, 235, 0.1); */
-  /* --color-link: #939393;
-  --color-link-transparent: rgba(191, 192, 192, 0.355); */
-  --color-link: #949aa5;
-  --color-link-transparent: #949aa549;
+  --text: hsl(0 0% 5%);
+  --text-muted: hsl(0 0% 30%);
+  --text-link: hsl(220 100% 60%);
+  --text-link-transparent: hsl(220 100% 60% 0.4);
 
-  --color-success: "";
-  --color-warning: "";
-  --color-error: "";
-  --color-info: "";
-  --color-highlight: #fef9c3;
+  --primary: #d8a021;
+  --secondary: #33473b;
 
-  /* --gradient-start: #0084ff; */
-  /* --gradient-end: #00fffb; */
-  --gradient-start: #ef8354;
-  --gradient-end: #efea54;
+  --gradient-start: #9580ff;
+  --gradient-end: #80ffea;
 
-  --border-primary: #29325b;
-  /* --border-secondary: #93c5fd; */
-  --border-secondary: #1d488d;
-  --border-highlight: #4649af;
-  --border-tertiary: "";
-
-  --shadow-dark: "";
-  --shadow-light: "";
-  --shadow-text: "";
-
-  --padding-small: 1rem;
-  --padding-large: 2rem;
+  /* --border: #29325b;
+  --border-muted: #1d488d;
+  --border-highlight: #4649af; */
+  --border: hsl(0 0% 30%);
+  --border-muted: hsl(0 0% 40%);
+  --border-highlight: hsl(0 0% 100%);
 
   --border-radius-small: 0.5rem;
   --border-radius-large: 0.75rem;
   --highlight-border-radius: 0.5rem;
 
+  --shadow: 0px 2px 2px hsla(0, 0%, 0%, 0.17), 0px 4px 4px hsla(0, 0%, 0%, 0.15);
+  --shadow-large: -1px -1px 4px #0022ffbf, 2px 2px 10px #0022ffbf,
+    0 0 20px #0022ffbf;
+  --shadow-text: "";
+
+  --padding-small: 1rem;
+  --padding-large: 2rem;
+
   --text-selection: "";
 }
-
-/* } */
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   /* font-family: "Eczar", serif; */
-  font-family: "Montserrat", serif;
-  /* font-family: "Lora", serif; */
-  /* font-family: "Libre Baskerville", serif; */
+  font-family: "Inter", sans-serif;
 }
 
 body {
-  background: var(--background-primary);
-  color: var(--color-primary);
+  background: var(--bg-dark);
+  color: var(--text);
   font-size: 0.875rem;
   line-height: 1.6rem;
 }
@@ -150,12 +78,21 @@ body {
 .text-gradient {
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-  background-image: linear-gradient(180deg, var(--gradient-start) 0, var(--gradient-end) 100%);
+  background-image: linear-gradient(
+    180deg,
+    var(--gradient-start) 0,
+    var(--gradient-end) 100%
+  );
   background-size: 100%;
   -webkit-box-decoration-break: clone;
   text-shadow: none !important;
   font-size: 3rem;
   line-height: 3.5rem;
+}
+
+.special-shadow {
+  text-shadow: var(--shadow);
+  color: var(--text-link);
 }
 
 /* Typography */
@@ -166,12 +103,11 @@ h4,
 h5,
 h6,
 button {
-  /* font-family: "Press Start 2P", serif; */
+  /* font-family: "Press Start 2P", sans-serif; */
   font-family: "BioRhyme", serif;
   width: fit-content;
 }
 
-/* h1, */
 .text-large {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -180,13 +116,6 @@ button {
 h1 {
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-.special-shadow {
-  /* text-shadow: -1px -1px 4px #0022ffbf, 2px 2px 10px #0022ffbf, 0 0 20px #0022ffbf; */
-  text-shadow: -1px -1px 4px #0022ff3c, 2px 2px 10px #0022ff3c, 0 0 20px #0022ff3c;
-  /* color: white; */
-  color: #4f5d75;
 }
 
 h2 {
@@ -203,12 +132,14 @@ h3,
 h4 {
   font-size: 1rem;
   line-height: 1.5rem;
+  color: var(--text-muted);
 }
 
 h5,
 h6 {
   font-size: 0.875rem;
   line-height: 1.25rem;
+  color: var(--text-muted);
 }
 
 p {
@@ -249,8 +180,8 @@ aside {
   padding: 0.75rem;
   margin: 0.5rem;
   font-style: italic;
-  color: var(--color-primary);
-  background-color: var(--background-muted);
+  color: var(--text);
+  background-color: var(--bg-dark);
   border-radius: var(--border-radius-large);
 }
 
@@ -268,7 +199,7 @@ blockquote::after {
   left: 0;
   top: 0;
   height: 100%;
-  border-left: 7px solid var(--border-primary);
+  border-left: 7px solid var(--border);
   border-radius: 6px;
 }
 
@@ -311,7 +242,7 @@ li {
 /* Inline Text Elements */
 
 a {
-  color: var(--color-link);
+  color: var(--text-link);
 }
 
 a:active,
@@ -322,8 +253,8 @@ a:hover {
 
 .link-button {
   border: none;
-  background: var(--background-primary);
-  color: var(--color-primary);
+  background: var(--bg-light);
+  color: var(--text);
   box-shadow: none;
   padding: 0.5rem 1rem;
 }
@@ -345,30 +276,30 @@ time {
 }
 
 mark {
-  background-color: var(--color-highlight);
+  background-color: var(--bg-light);
   padding: 0 4px;
 }
 
 samp {
   font-weight: bold;
   padding: 0.5rem 1rem;
-  background-color: var(--background-muted);
-  color: var(--color-primary);
+  background-color: var(--bg-dark);
+  color: var(--text);
 }
 
 kbd,
 time {
   padding: 0rem 0.5rem;
-  background-color: var(--background-muted);
-  color: var(--color-primary);
+  background-color: var(--bg-dark);
+  color: var(--text);
 }
 
 code,
 pre {
   font-size: 0.9em;
   padding: 0.2rem 0.5rem;
-  background: var(--background-muted);
-  border: 1px solid var(--border-primary);
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
   max-width: fit-content;
   overflow-x: auto;
 }
@@ -408,8 +339,8 @@ img {
 /* Tables */
 table {
   width: fit-content;
-  border: 1px solid var(--border-primary);
-  background: var(--background-muted);
+  border: 1px solid var(--border);
+  background: var(--bg-dark);
   border-radius: var(--border-radius-small);
 }
 
@@ -430,11 +361,11 @@ table tr:first-child th:last-child {
 }
 
 th {
-  background-color: var(--background-muted);
+  background-color: var(--bg-dark);
 }
 
 td {
-  background: var(--background-primary);
+  background: var(--bg-light);
 }
 
 td,
@@ -453,7 +384,7 @@ tfoot {
 
 table tr:hover td,
 tbody tr:nth-child(even):hover td {
-  background-color: var(--background-muted);
+  background-color: var(--bg-dark);
 }
 
 /* Form elements */
@@ -476,32 +407,32 @@ input[type="radio"] {
 }
 
 button {
-  color: var(--color-primary);
-  background-color: var(--background-secondary);
+  color: var(--text);
+  background-color: var(--bg);
   width: fit-content;
   font-family: inherit;
   font-size: inherit;
   font-weight: 500;
   padding: 0.25rem 1.25rem;
-  border: 1.5px solid var(--border-secondary);
+  border: 1.5px solid var(--border-muted);
   border-radius: var(--border-radius-small);
-  box-shadow: 2px 2px 0 0 var(--border-secondary);
+  box-shadow: 2px 2px 0 0 var(--border-muted);
   transition-duration: 200ms;
 }
 
 button:hover {
-  box-shadow: 0 0 0 0 var(--border-secondary);
+  box-shadow: 0 0 0 0 var(--border-muted);
   transform: translate(2px, 2px);
 }
 
 button[disabled]:hover {
-  box-shadow: 2px 2px 0 0 var(--border-secondary);
+  box-shadow: 2px 2px 0 0 var(--border-muted);
   transform: translate(0, 0);
 }
 
 button:disabled,
 button[disabled] {
-  border: 1.5px solid var(--border-secondary);
+  border: 1.5px solid var(--border-muted);
   cursor: initial;
   opacity: 0.55;
 }
@@ -516,9 +447,9 @@ input,
 textarea,
 select {
   font-size: 1em;
-  background-color: var(--background-muted);
-  border: 1px solid var(--border-secondary);
-  color: var(--color-primary);
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
   padding: 0.5rem 0.75rem;
   border-radius: var(--border-radius-small);
   width: 100%;
@@ -569,7 +500,7 @@ input[type="radio"] {
 
 input[type="checkbox"]:checked,
 input[type="radio"]:checked {
-  background: var(--border-secondary);
+  background: var(--border-muted);
 }
 
 input[type="range"] {
@@ -613,23 +544,23 @@ progress {
 }
 
 progress::-webkit-progress-bar {
-  background: var(--background-main);
-  border: 1px solid var(--border-primary);
+  background: var(--bg);
+  border: 1px solid var(--border);
   border-radius: var(--highlight-border-radius);
 }
 
 progress::-webkit-progress-value {
-  background-color: var(--color-link);
+  background-color: var(--text-link);
   border-radius: var(--border-radius-small);
 }
 
 progress::-moz-progress-bar {
-  background-color: var(--color-link);
+  background-color: var(--text-link);
   border-radius: var(--border-radius-small);
 }
 
 fieldset {
-  border: 1px solid var(--border-primary);
+  border: 1px solid var(--border);
   border-radius: var(--border-radius-small);
   margin: 0;
   margin-bottom: 6px;
@@ -639,7 +570,7 @@ fieldset {
 
 /* Interactive elements */
 details {
-  border: 1px solid var(--border-primary);
+  border: 1px solid var(--border);
   border-radius: var(--border-radius-small);
   padding: 0.5rem 0.75rem;
 }
@@ -649,24 +580,24 @@ summary {
 }
 
 details[open] summary {
-  border-bottom: 1px solid var(--border-primary);
+  border-bottom: 1px solid var(--border);
   margin-bottom: 0.5rem;
 }
 
 .card,
 .button-card {
-  background-color: var(--background-muted);
-  color: var(--color-primary);
+  background-color: var(--bg-dark);
+  color: var(--text);
   padding: 1rem;
   border-radius: 0.5rem;
 }
 
 .card {
-  border: 1px solid var(--color-link-transparent);
+  border: 1px solid var(--text-link-transparent);
 }
 
 .button-card {
-  border: 1px solid var(--border-secondary);
+  border: 1px solid var(--border-muted);
 }
 
 .button-card {
@@ -686,13 +617,13 @@ details[open] summary {
 }
 
 .card-button-primary {
-  color: var(--background-primary);
-  background: var(--color-link);
+  color: var(--bg-light);
+  background: var(--text-link);
 }
 
 .card-button-secondary {
-  color: var(--color-link);
-  background: var(--color-link-transparent);
+  color: var(--text-link);
+  background: var(--text-link-transparent);
 }
 
 .card-button-primary:hover,
