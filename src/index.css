@@ -59,7 +59,7 @@ section {
 }
 
 svg path {
-  fill: var(--bg);
+  fill: var(--bg-base);
 }
 
 /* DASHBOARD */
@@ -122,7 +122,7 @@ svg path {
 }
 
 .item-header {
-  color: var(--border-muted);
+  color: var(--text-top);
 }
 
 .today-container {
@@ -163,7 +163,7 @@ svg path {
   display: flex;
   flex-direction: column;
   gap: 0.1rem;
-  color: var(--text) !important;
+  color: var(--text-base) !important;
 }
 
 /* CHALLENGE */
@@ -180,7 +180,6 @@ svg path {
 
 #challenge h3 {
   font-size: clamp(1.125rem, 0.625rem + 2.581vw, 1.625rem);
-  /* text-align: center; */
 }
 
 /* When displaying word, not definition */
@@ -212,7 +211,6 @@ svg path {
   flex-direction: column;
   gap: 0.75rem;
   width: 100%;
-  /* position: relative; */
 }
 
 .helper input {
@@ -235,7 +233,7 @@ svg path {
 }
 
 .correct {
-  background: var(--gray) !important;
+  background: var(--bg-accent) !important;
 }
 
 .incorrect {
@@ -244,11 +242,16 @@ svg path {
 
 /* react-confetti*/
 .correct-message {
+  position: absolute;
+  align-self: center;
+  font-size: 3rem;
+  line-height: 3.5rem;
   color: #4ade80;
-  font-size: 2rem;
+  text-shadow: 2px 2px 0 #fff, -2px -2px 0 #fff, -2px 2px 0 #fff,
+    2px -2px 0 #fff, 0px 2px 0 #fff, 0 -2px 0 #fff, -2px 0 0 #fff, 2px 0 0 #fff;
   font-weight: bold;
   text-align: center;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
 }
 
 .animate-pop {
@@ -301,7 +304,7 @@ footer a {
   gap: 0.2rem;
   padding: 0.3rem;
   padding-right: 0.4rem;
-  background: var(--bg);
+  background: var(--bg-top);
   color: var(--text-muted);
   border-radius: 4rem;
   border: 1px solid transparent;

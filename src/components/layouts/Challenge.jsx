@@ -85,6 +85,19 @@ export default function Challenge(props) {
 
   return (
     <section id="challenge">
+      {isCorrect && (
+        <>
+          <Confetti
+            width={width}
+            height={height}
+            numberOfPieces={800}
+            gravity={0.3}
+            wind={0.01}
+            recycle={false}
+          />
+          <div className="correct-message correct-fade">🎉Correct!</div>
+        </>
+      )}
       {/* <h1>{word}</h1> */}
       <h3>{word}</h3>
       {isNewWord && <em>{definition}</em>}
@@ -141,20 +154,6 @@ export default function Challenge(props) {
             }
           }}
         />
-
-        {isCorrect && (
-          <>
-            <div className="correct-message correct-fade">🎉 Correct!</div>
-            <Confetti
-              width={width}
-              height={height}
-              numberOfPieces={800}
-              gravity={0.3}
-              wind={0.01}
-              recycle={false}
-            />
-          </>
-        )}
 
         {/* <canvas ref={canvasRef} className="canvas"></canvas> */}
       </div>

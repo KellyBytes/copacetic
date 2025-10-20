@@ -16,7 +16,7 @@ export default function Welcome(props) {
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth="1.5"
-          stroke="rgb(219 234 254)"
+          stroke="#ffdf00"
           className="size-6"
         >
           <path

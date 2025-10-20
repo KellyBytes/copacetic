@@ -1,5 +1,4 @@
 # ReactJS Full Course | Build a Smart Word Memory App
-Code along with [jamezmca](https://github.com/jamezmca)
 
 ## Overview
 A full-featured **Word Memory App** that:
@@ -22,23 +21,24 @@ A full-featured **Word Memory App** that:
 - Gamifying learning with streaks and progress indicators
 - Deploying React apps to the web with Netlify
 
+Originally created by [jamezmca](https://github.com/jamezmca)
+
 ---
 
 ## Screenshots
 
-<figure>
-  <img src="./src/assets/images/copacetic-welcome.png" height="250" />
-  <figcaption>Start Page</figcaption>
-</figure>
-<br />
+<strong>Light Mode</strong>
+  <p>
+    <img src="./src/assets/images/copacetic-welcome-1.png" height="150" style="margin-right: 5px" alt="Start Page"/>
+    <img src="./src/assets/images/copacetic-stats-1.png" height="150" alt="Stats Page"/>
+    <img src="./src/assets/images/copacetic-challenge-1.png" height="150" style="margin-right: 5px" alt="Challenge Page"/>
+    <br />
+</p>
 
-<figure>
-  <img src="./src/assets/images/copacetic-challenge.png" height="250" />
-  <figcaption>Challenge Page</figcaption>
-</figure>
-<br />
-
-<figure>
-  <img src="./src/assets/images/copacetic-stats.png" height="250" />
-  <figcaption>Stats Page</figcaption>
-</figure>
+<strong>Dard Mode</strong>
+  <p>
+    <img src="./src/assets/images/copacetic-welcome-2.png" height="150" style="margin-right: 5px" alt="Start Page"/>
+    <img src="./src/assets/images/copacetic-stats-2.png" height="150" alt="Stats Page"/>
+    <img src="./src/assets/images/copacetic-challenge-2.png" height="150" style="margin-right: 5px" alt="Challenge Page"/>
+    <br />
+</p>
